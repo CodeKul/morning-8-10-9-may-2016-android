@@ -13,14 +13,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        runFragmentTransaction(R.id.frameContainer,FirstFragment.getInstance("android"));
+        runFragmentTransaction(R.id.frameMenu,MenuFragment.getInstance());
+        runFragmentTransaction(R.id.frameContainer,ContentFragment.getInstance(R.drawable.india));
     }
 
     public void runFragmentTransaction(int container, Fragment fragment){
 
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction txn = manager.beginTransaction();
-        txn.add(container,fragment);
+        txn.replace(container,fragment);
         txn.commit();
     }
 }

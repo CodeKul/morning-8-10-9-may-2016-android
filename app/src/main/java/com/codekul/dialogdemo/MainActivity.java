@@ -21,5 +21,41 @@ public class MainActivity extends AppCompatActivity {
                         MyDialog.KEY_ALERT_DIALOG);
             }
         });
+
+        findViewById(R.id.btnDatePicker).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                MyDialog dialog = new MyDialog();
+                dialog.show(getSupportFragmentManager(),
+                        MyDialog.KEY_DATEPICKER_DIALOG);
+            }
+        });
+
+        findViewById(R.id.btnTimePicker).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                MyDialog dialog = new MyDialog();
+                dialog.show(getSupportFragmentManager(),
+                        MyDialog.KEY_TIMEPICKER_DIALOG);
+            }
+        });
+
+        findViewById(R.id.btnProgress).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                MyDialog dialog = new MyDialog();
+                dialog.show(getSupportFragmentManager(),
+                        MyDialog.KEY_PROGRESS_DIALOG);
+            }
+        });
+
+        findViewById(R.id.btnCustom).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                MyDialog dialog = new MyDialog();
+                dialog.show(getSupportFragmentManager(),
+                        MyDialog.KEY_CUSTOM_DIALOG);
+            }
+        });
     }
 }

@@ -1,7 +1,6 @@
 package com.codekul.assestsandresources;
 
 import android.content.res.Configuration;
-import android.os.PersistableBundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,9 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-        getWindow().setBackgroundDrawableResource(R.drawable.my);
+        getWindow().setBackgroundDrawableResource(R.drawable.one);
 
         int pureWhite = getResources().getColor(R.color.pureWhite);
         pureWhite = ContextCompat.getColor(this,R.color.pureWhite);
@@ -71,5 +68,21 @@ public class MainActivity extends AppCompatActivity {
 
     private void mt(String msg){
         Toast.makeText(this,msg,Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        if(newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE){
+
+            getWindow().setBackgroundDrawableResource(R.drawable.one);
+        }
+        else if(newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+            getWindow().setBackgroundDrawableResource(R.drawable.two);
+        }
+        else {
+            getWindow().setBackgroundDrawableResource(R.drawable.my);
+        }
     }
 }

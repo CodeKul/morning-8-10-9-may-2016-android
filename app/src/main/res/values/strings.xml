@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AssestsAndResources</string>
+
+    <string name="textLable">Its Hello world</string>
+
+    <color name="pureWhite">#ffffff</color>
+
+    <dimen name="btnLeftPasdding">30dp</dimen>
 </resources>

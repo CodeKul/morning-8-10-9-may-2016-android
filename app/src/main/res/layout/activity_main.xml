@@ -10,7 +10,22 @@
     tools:context="com.codekul.assestsandresources.MainActivity">
 
     <TextView
+        android:id="@+id/textStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="@string/textLable"
+        android:paddingLeft="@dimen/btnLeftPasdding"
+        android:background="@color/pureWhite"
+        style="@style/boldStyle"/>
+
+    <Button
+        android:id="@+id/btnOkay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textLable"
+        android:paddingLeft="@dimen/btnLeftPasdding"
+        android:background="@color/pureWhite"
+        style="@style/boldStyle"
+        android:layout_alignParentBottom="true"/>
+
 </RelativeLayout>

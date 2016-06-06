@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.codekul.filehandling.MainActivity"
+    android:orientation="vertical">
+
+
+    <Button
+        android:id="@+id/btnOpenFileOutput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="open file output"/>
+
+    <Button
+        android:id="@+id/btnOpenFileInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="open file input"/>
+
+    <Button
+        android:id="@+id/btnFileList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="file list"/>
+
+    <Button
+        android:id="@+id/btnGetFilesDir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="get Files Dir"/>
+
+    <Button
+        android:id="@+id/btnGetExternalFilesDir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="get External files dir"/>
+
+    <ListView android:id="@+id/listFiles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>
+
+</LinearLayout>

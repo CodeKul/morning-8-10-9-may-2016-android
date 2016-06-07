@@ -1,11 +1,13 @@
 package com.codekul.filehandling;
 
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -113,19 +115,73 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                Log.i("@codekul","getExternalFilesDir"+ getExternalFilesDir("my").getPath());
+
                 File file = new File(getExternalFilesDir("my"),"a.txt");
                 try {
-                    FileOutputStream fos = new FileOutputStream(file);
+                    FileOutputStream fos =
+                            new FileOutputStream(file);
                     fos.write("Hello world".getBytes());
-
                     fos.close();
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
             }
         });
+
+        findViewById(R.id.btnGetExternalFilesDirRead)
+                .setOnClickListener(new View.OnClickListener(){
+
+                    @Override
+                    public void onClick(View v) {
+
+                        File file = new
+                                File(getExternalFilesDir("my"),"a.txt");
+
+                        try {
+                            FileInputStream fis =
+                                    new FileInputStream(file);
+                            byte []data = new byte[(int) file.length()];
+                            fis.read(data);
+                            Log.i("@codekul",new String(data));
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+
+        findViewById(R.id.btnExternalStoragePublicDirectory)
+                .setOnClickListener(new View.OnClickListener(){
+
+                    @Override
+                    public void onClick(View v) {
+
+                        Log.i("@codekul","getExternalStoragePublicDirectory"+ Environment.getExternalStoragePublicDirectory("my").getPath());
+
+                        if(Environment
+                                .getExternalStorageState()
+                                .equals(Environment.MEDIA_MOUNTED)){
+                            File file = new File(Environment
+                                    .getExternalStoragePublicDirectory(""),"a.txt");
+
+                            try {
+                                FileOutputStream fos = new FileOutputStream(file);
+                                fos.write("HEllo World".getBytes());
+                                fos.close();                            } catch (FileNotFoundException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+                        else {
+                            Toast.makeText(MainActivity.this,"Media not mounted",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 }

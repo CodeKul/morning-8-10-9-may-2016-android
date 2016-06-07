@@ -41,6 +41,18 @@
         android:layout_height="wrap_content"
         android:text="get External files dir"/>
 
+    <Button
+        android:id="@+id/btnGetExternalFilesDirRead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Read External files dir"/>
+
+    <Button
+        android:id="@+id/btnExternalStoragePublicDirectory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Write External Storage Public Directory"/>
+
     <ListView android:id="@+id/listFiles"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
